@@ -1,13 +1,279 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html body {
+    font-family: 'Roboto', sans-serif;
 }
+
+.slide .carousel-indicators .active {
+    background-color: rgb(251, 66, 38);
+}
+
+.slide .carousel-indicators button {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+}
+
+span.carousel-control-next-icon,
+span.carousel-control-prev-icon {
+    width: 4rem;
+    height: 4rem;
+}
+
+
+.slick-arrow.slick-prev:before,
+.slick-arrow.slick-next:before {
+    color: gray;
+    font-size: 3rem;
+
+}
+
+.slick-arrow.slick-prev {
+    left: -50px;
+}
+
+/* danh sách Phim  */
+.list-phim .slick-slider .slick-dots {
+    bottom: 0px;
+
+}
+
+.list-phim .slick-slider .slick-dots li {
+    margin-right: 15px;
+
+}
+
+.list-phim .slick-slider .slick-dots .slick-active div {
+    border: 1px solid #f9ab00 !important;
+}
+
+.cardphim {
+    height: 444px;
+}
+
+.cardphim .img-phim {
+    position: relative;
+}
+
+.cardphim-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, #000, transparent);
+    opacity: 0;
+    transition: all .3s;
+}
+
+
+.cardphim:hover .cardphim-overlay {
+    opacity: 1;
+}
+
+.tenphim,
+.mota {
+    opacity: 1;
+    transition: all .3s;
+}
+
+.cardphim:hover .tenphim,
+.cardphim:hover .mota {
+    opacity: 0;
+    display: none;
+}
+
+.datve {
+    opacity: 0;
+    display: none;
+    transition: all .3s;
+    /* border: 1px solid black; */
+    margin-top: 15px;
+    border-radius: 0.25rem;
+    padding: 9px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    background: linear-gradient(to left, #fb4226, #ce3017 100%);
+}
+
+.cardphim:hover .datve {
+    opacity: 1;
+    display: block;
+}
+
+/* nút play  */
+.video_button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.video_button a {
+    background: #fff;
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    border-radius: 50%;
+    text-align: center;
+    color: #189A45;
+    transition: 0.3s ease-in-out;
+    animation: ripple 1s linear infinite;
+}
+
+.video_button a:hover {
+    transform: scale(1.1);
+}
+
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0 rgb(15 162 66 / 16%), 0 0 0 10px rgb(15 162 67 / 25%), 0 0 0 20px rgb(15 162 67 / 25%);
+    }
+
+    100% {
+        box-shadow: 0 0 0 10px rgb(15 162 67 / 25%), 0 0 0 20px rgb(15 162 67 / 25%), 0 0 0 40px rgb(50 100 245 / 0%);
+    }
+}
+
+
+/* danh sách rạp phim  */
+.danhsach_rap {
+    height: 720px;
+    margin-bottom: 50px;
+}
+
+.danhsach_rap .ant-tabs-nav {
+    border: 1px solid #e0e0e0;
+
+}
+
+.danhsach_rap .ant-tabs-tabpane {
+    padding: 0 !important;
+}
+
+.danhsach_rap .ant-tabs-tab {
+    padding: 20px !important;
+    height: 90px;
+    text-align: left !important;
+}
+
+.danhsach_rap .logo_rap::after {
+    width: 65%;
+    bottom: 0;
+    height: 1px;
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(238, 238, 238, .88);
+    margin: auto;
+}
+
+.danhsach_rap .ahihi .ant-tabs-nav,
+.ant-tabs-content-holder {
+    /* width: 325px; */
+    height: 720px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.danhsach_rap .ahihi .ant-tabs-nav-operations {
+    display: none !important;
+}
+
+.danhsach_rap .ahihi .ant-tabs-nav {
+    width: 450px;
+}
+
+.danhsach_rap .ahuhu .ant-tabs-nav-list {
+    width: 800px;
+}
+
+.danhsach_rap .tenrap::after {
+    width: 83%;
+    bottom: 0;
+    height: 1px;
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(238, 238, 238, .88);
+}
+
+.tenrap h4 {
+    color: #108f3e;
+    display: -webkit-box;
+    overflow: hidden;
+    font-weight: 500;
+    line-height: 1.4;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    font-size: 16px;
+}
+
+.diachi{
+    color: #757575;
+    display: -webkit-box;
+    overflow: hidden;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    font-size: 14px;
+}
+
+
+.ahihi .ant-tabs-content-holder {
+    border: 1px solid #e0e0e0;
+}
+
+.img_phim img {
+    width: 100px;
+    height: 126px !important;
+}
+
+hr {
+    margin: 0 30px !important;
+}
+
+.giochieu {
+    padding: 0 20px;
+}
+
+.giochieu h2 {
+    font-size: 18px;
+}
+
+.giochieu a {
+    color: #9e9e9e;
+    width: 90%;
+    border: 1px solid #e4e4e4;
+    cursor: pointer;
+    margin: 0px 16px 16px 0px;
+    padding: 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    background-color: rgba(246, 246, 246, 0.5);
+}
+
+/* chi tiết phim  */
+.giochieu_chitiet a {
+    color: #9e9e9e;
+    width: 90%;
+    border: 1px solid #e4e4e4;
+    cursor: pointer;
+    margin: 0px 16px 16px 0px;
+    padding: 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    background-color: rgba(246, 246, 246, 0.5);
+}
+
