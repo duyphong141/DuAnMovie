@@ -16,6 +16,7 @@ import New from './pages/New/New';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Detail from './pages/Detail/Detail';
+import AdminComponent from './components/AdminComponent/AdminComponent';
 
 
 const TicketBookLazy = lazy(() => import('./pages/TicketBook/TicketBook'))
@@ -50,6 +51,12 @@ function App() {
             <Route exact path="/checkout/:id" component={TicketBookLazy} />
 
             <Route exact path="/" component={Home} />
+
+            {/* Admin */}
+            <Route exact path="/AdminComponent" component={AdminComponent} />
+            
+
+            
           </Suspense>
         </Switch>
       </BrowserRouter>
