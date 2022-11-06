@@ -16,18 +16,16 @@ import New from './pages/New/New';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Detail from './pages/Detail/Detail';
-import AdminComponent from './components/AdminComponent/AdminComponent';
 import AdminDashBoarh from './pages/Admin/DashBoarh/AdminDashBoarh';
 import AdminFilms from './pages/Admin/Films/AdminFilms';
 import AdminShowTime from './pages/Admin/ShowTime/AdminShowTime';
 import AdminAddFilms from './pages/Admin/Films/AdminAddFilms/AdminAddFilms';
-
+import AdminTemplete from './Templete/AdminTemplete';
 
 
 
 const TicketBookLazy = lazy(() => import('./pages/TicketBook/TicketBook'))
 const HomeLazy = lazy(() => import('./pages/Home/Home'))
-
 
 
 function App() {
@@ -57,16 +55,21 @@ function App() {
             <Route exact path="/" component={Home} />
 
             {/* Admin */}
-            <Route exact path="/AdminComponent" component={AdminComponent} />
-            <Route exact path="/AdminDashBoarh" component={AdminDashBoarh} />
-            <Route exact path="/AdminFilms" component={AdminFilms} />
-            <Route exact path="/AdminAddFilms" component={AdminAddFilms} />
-          
-            
-       
-            
+            {/* <Route exact path="/AdminComponent" render={() => { 
+              return 
+             }}/> */}
 
-            
+            <AdminTemplete exact path="/AdminDashBoarh" component={AdminDashBoarh} />
+            <AdminTemplete exact path="/AdminFilms" component={AdminFilms} />
+            {/* <Route exact path="/AdminDashBoarh" component={AdminDashBoarh} />
+            <Route exact path="/AdminFilms" component={AdminFilms} />
+            <Route exact path="/AdminAddFilms" component={AdminAddFilms} /> */}
+
+
+
+
+
+
           </Suspense>
         </Switch>
       </BrowserRouter>
