@@ -2,8 +2,11 @@ import { GET_DANHSACH_PHIM } from "../types/danhSachPhimType"
 import { GET_CHI_TIET_PHIM } from "../types/quanLyRapType"
 
 const initialState = {
+
     phimArray: [],
-    phimDetail: {}
+    phimDetail: {},
+
+    
 }
 
 export const quanLyPhimReducer = (state = initialState, action) => {
@@ -11,7 +14,7 @@ export const quanLyPhimReducer = (state = initialState, action) => {
 
         case GET_DANHSACH_PHIM:
             state.phimArray = action.phimArray
-
+          
             return { ...state }
 
         case GET_CHI_TIET_PHIM:

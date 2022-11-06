@@ -14,7 +14,7 @@ export const danhSachPhimAction = (dispatch2) => {
     promise.then((result) => {
         let action2 = {
             type: GET_DANHSACH_PHIM,
-            phimArray: result.data.content
+            phimArray:result.data.content
         }
         dispatch2(action2);
     });

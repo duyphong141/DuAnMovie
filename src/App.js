@@ -17,6 +17,9 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Detail from './pages/Detail/Detail';
 import AdminComponent from './components/AdminComponent/AdminComponent';
+import AdminDashBoarh from './pages/Admin/DashBoarh/AdminDashBoarh';
+import AdminFilms from './pages/Admin/Films/AdminFilms';
+import AdminShowTime from './pages/Admin/ShowTime/AdminShowTime';
 
 
 const TicketBookLazy = lazy(() => import('./pages/TicketBook/TicketBook'))
@@ -54,6 +57,10 @@ function App() {
 
             {/* Admin */}
             <Route exact path="/AdminComponent" component={AdminComponent} />
+
+            <Route exact path="/AdminDashBoarh" component={AdminDashBoarh} />
+            
+            <Route exact path="/AdminShowTime" component={AdminShowTime} />
             
 
             
