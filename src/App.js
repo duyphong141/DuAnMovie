@@ -17,10 +17,11 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Detail from './pages/Detail/Detail';
 import AdminDashBoarh from './pages/Admin/DashBoarh/AdminDashBoarh';
-import AdminFilms from './pages/Admin/Films/AdminFilms';
-import AdminShowTime from './pages/Admin/ShowTime/AdminShowTime';
-import AdminAddFilms from './pages/Admin/Films/AdminAddFilms/AdminAddFilms';
-import AdminTemplete from './Templete/AdminTemplete';
+import AdminTemplate from './Templete/AdminTemplate';
+
+
+
+
 
 
 
@@ -55,20 +56,8 @@ function App() {
             <Route exact path="/" component={Home} />
 
             {/* Admin */}
-            {/* <Route exact path="/AdminComponent" render={() => { 
-              return 
-             }}/> */}
-
-            <AdminTemplete exact path="/AdminDashBoarh" component={AdminDashBoarh} />
-            <AdminTemplete exact path="/AdminFilms" component={AdminFilms} />
-            {/* <Route exact path="/AdminDashBoarh" component={AdminDashBoarh} />
-            <Route exact path="/AdminFilms" component={AdminFilms} />
-            <Route exact path="/AdminAddFilms" component={AdminAddFilms} /> */}
-
-
-
-
-
+           <AdminTemplate path="/Admin"  exact component={AdminDashBoarh}/>
+           {/* <AdminTemplate path="/Admin/Films"  exact Component={AdminFilms}/> */}
 
           </Suspense>
         </Switch>
