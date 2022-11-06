@@ -9,6 +9,8 @@ import { Breadcrumb, Layout, Menu } from 'antd';
 import SubMenu from 'antd/lib/menu/SubMenu';
 import React, { Component, Fragment, useState } from 'react';
 import { NavLink, Route } from 'react-router-dom';
+import AdminDashBoarh from '../pages/Admin/DashBoarh/AdminDashBoarh';
+import AdminFilms from '../pages/Admin/Films/AdminFilms';
 const { Header, Content, Footer, Sider } = Layout;
 function getItem(label, key, icon, children) {
     return {
@@ -92,7 +94,8 @@ const AdminTemplate = (props) => {
                                 minHeight: 360,
                             }}
                         >
-                            {/* <Component {...propsRoute} /> */}
+                           <Route exact path="/AdminDashBoarh" component={AdminDashBoarh} />
+                           <Route exact path="/Admin/Films" component={AdminFilms} />
                         </div>
                     </Content>
                 </Layout>
